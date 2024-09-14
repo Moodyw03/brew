@@ -196,7 +196,7 @@ module Homebrew
         unbottled_formulae = 0
 
         formulae.each do |f|
-          next if f.bottle_specification.tag?(@bottle_tag)
+          next if f.bottle_specification.tag?(@bottle_tag, no_older_versions: true)
 
           unbottled_formulae += 1
         end
